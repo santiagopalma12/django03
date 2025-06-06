@@ -10,4 +10,5 @@ urlpatterns = [
     path('persona/', personaTestView, name='test-persona'), 
     path('persona/', personaTestView, name='test-persona'),
     path('agregar/', personaCreateView, name='create-persona'),
+    path("search/", views.searchForHelp, name="search"),
 ]
