@@ -5,10 +5,14 @@
     <h3>templates</h3>
 
     <p>
-        
         {{ myText|upper|truncatechars:"16" }}, 
         {{ myNumber }}
-        
+    </p>
+
+    <p>
+        Longitud del texto: {{ myText|length }} <br>
+        Fecha actual: {{ myDate|date:"d/m/Y H:i" }} <br>
+        Valor por defecto si está vacío: {{ myEmptyValue|default:"Sin valor disponible" }}
     </p>
 
     <ul>
