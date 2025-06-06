@@ -17,6 +17,12 @@
                     - Este número es mágico
                 {% elif myItem > 50 %}
                     - Este número es mayor que 50
+                {% elif myItem > 10 and myItem < 20 %}
+                    - Está entre 11 y 19
+                {% elif myItem == 0 or myItem == 100 %}
+                    - Es 0 o 100
+                {% elif myItem not in specialNumbers %}
+                    - No está en la lista especial
                 {% endif %}
             </li>
         {% endfor %}
