@@ -3,14 +3,20 @@
 {% block content %}
     <h1>Hola Mundo !!! desde django!!!!!</h1>
     <h3>templates</h3>
+
     <p>
         {{ myText }}, 
         {{ myNumber }}
     </p>
-{% endblock %}
-</ul>
-    {% for myItem in myList %}
-        <li>{{ myItem }}</li>
-    {% endfor %}
-</ul>
+
+    <ul>
+        {% for myItem in myList %}
+            <li>
+                {{ forloop.counter }}. {{ myItem }}
+                {% if forloop.first %} (Es el primero) {% endif %}
+                {% if forloop.last %} (Es el último) {% endif %}
+                [Inverso: {{ forloop.revcounter }}]
+            </li>
+        {% endfor %}
+    </ul>
 {% endblock %}
