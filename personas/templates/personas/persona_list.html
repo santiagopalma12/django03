@@ -9,7 +9,9 @@ Lista de Personas
 {% for instance in object_list %} {# ListView pasa los objetos en 'object_list' #}
     <p>
         {{ instance.id }} -
-        {# Más adelante añadiremos un enlace aquí #}
+        <li>
+            <a href="{{ persona.get_absolute_url }}">{{ persona.nombres }} {{ persona.apellidos }}</a>
+        </li>
         {{ instance.nombres }} {{ instance.apellidos }}
     </p>
 {% endfor %}
