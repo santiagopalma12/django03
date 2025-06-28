@@ -10,3 +10,6 @@ from .models import Persona
 
 class PersonaListView(ListView):
     model = Persona
+
+class PersonaDetailView(DetailView):
+    model = Persona
