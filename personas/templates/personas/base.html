@@ -1,10 +1,12 @@
+{% load static %} {# Cargar la librería de tags estáticos #}
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{% block title %}Mi Proyecto Django{% endblock %}</title>
+    <title>{% block title %}Mi Proyecto{% endblock %}</title>
 </head>
 <body>
-    {% block body %}
-    {% endblock %}
+    <img src="{% static 'personas/logo-unsa.png' %}" alt="Logo UNSA" height="50">
+    <hr>
+    {% block body %}{% endblock %}
 </body>
 </html>
