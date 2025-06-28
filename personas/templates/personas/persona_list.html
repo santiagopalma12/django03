@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Lista de Personas
+{% endblock %}
+
+{% block body %}
+<h1>Listado de Personas</h1>
+{% for instance in object_list %} {# ListView pasa los objetos en 'object_list' #}
+    <p>
+        {{ instance.id }} -
+        {# Más adelante añadiremos un enlace aquí #}
+        {{ instance.nombres }} {{ instance.apellidos }}
+    </p>
+{% endfor %}
+{% endblock %}
