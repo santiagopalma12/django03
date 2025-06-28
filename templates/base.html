@@ -1,13 +1,28 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Código para Estudiantes desde Django</title>
+    <meta charset="UTF-g">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}App Personas{% endblock %}</title>
+    <style>
+        body { font-family: sans-serif; margin: 2em; }
+        nav { background-color: #f0f0f0; padding: 1em; margin-bottom: 1em; }
+        nav a { margin-right: 15px; text-decoration: none; color: #333; font-weight: bold; }
+    </style>
 </head>
 <body>
-    {% include 'nav.html' %}
-    <h1>Este es un texto de Base</h1>
-    {% block content %}
-        Reemplázame
-    {% endblock %}
+    <nav>
+        <img src="{% static 'personas/logo-unsa.png' %}" alt="Logo UNSA" height="30" style="vertical-align: middle;">
+        <!-- El tag 'url' usa el app_name y el name de la ruta para construir la URL dinámicamente -->
+        <a href="{% url 'personas:persona-list' %}">Lista de Personas (Home)</a>
+        <a href="{% url 'personas:persona-create' %}">Añadir Persona</a>
+    </nav>
+
+    <main>
+        {% block body %}
+        <!-- El contenido específico de cada página irá aquí -->
+        {% endblock %}
+    </main>
 </body>
 </html>

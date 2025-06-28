@@ -7,7 +7,9 @@ from .views import (
     PersonaUpdateView,
     PersonaDeleteView
 )
+
 app_name = 'personas'
+
 urlpatterns = [
     path('', PersonaListView.as_view(), name='persona-list'),
     path('create/', PersonaCreateView.as_view(), name='persona-create'),
