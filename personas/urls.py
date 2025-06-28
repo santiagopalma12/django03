@@ -1,6 +1,9 @@
+# personas/urls.py
 from django.urls import path
-from . import views
+from .views import PersonaListView
+
+app_name = 'personas'
 
 urlpatterns = [
-    path("search/", views.searchForHelp, name="search"),
+    path('', PersonaListView.as_view(), name='persona-list'),
 ]
