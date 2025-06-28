@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Detalle de {{ object.nombres }}{% endblock %}
+
+{% block body %}
+    <h1>{{ object.nombres }} {{ object.apellidos }}</h1>
+    <p>Edad: {{ object.edad }}</p>
+    <p>Donador: {% if object.donador %}Sí{% else %}No{% endif %}</p>
+    <hr>
+    <a href="{% url 'personas:persona-update' object.pk %}">Editar</a> |
+    <a href="{% url 'personas:persona-delete' object.pk %}">Borrar</a>
+    <br><br>
+    <a href="{% url 'personas:persona-list' %}">Volver a la lista</a>
+{% endblock %}
